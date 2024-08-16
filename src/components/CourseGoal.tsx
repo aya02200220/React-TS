@@ -11,17 +11,17 @@ type CourseGoalProps = PropsWithChildren<{ title: string }>;
 
 const CourseGoal: FC<CourseGoalProps> = ({ title, children }) => {
   return (
-    <article>
+    <article className="flex flex-col items-center justify-center text-center">
       <div>
         <h2
-          className="text-2xl
+          className="text-xl
         "
         >
           {title}
         </h2>
         {children}
       </div>
-      <button>Delete</button>
+      <button className="border rounded-md px-2 py-1 mt-4">Delete</button>
     </article>
   );
 };

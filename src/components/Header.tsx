@@ -9,7 +9,7 @@ const Header = ({ image, children }: HeaderProps) => {
   return (
     <div className="flex flex-col items-center">
       <img
-        className="h-[100px] flex items-center"
+        className="h-[80px] flex items-center rounded-full"
         src={image.src}
         alt={image.alt}
       />
