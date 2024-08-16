@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "./App.css";
-import CourseGoal from "./components/CourseGoal";
 import Header from "./components/Header";
 import goalImg from "./goals.jpg";
+import CourseGoalList from "./components/CourseGoalList";
 
-type CourseGoalType = {
+export type CourseGoalType = {
   title: string;
   description: string;
   id: number;
@@ -35,15 +35,8 @@ function App() {
       >
         Add Goal
       </button>
-      <ul className="grid grid-cols-3 gap-1">
-        {goals.map((goal) => (
-          <li className=" bg-[#333] p-3 m-1 " key={goal.id}>
-            <CourseGoal title={goal.title}>
-              <p className="leading-4">{goal.description}</p>
-            </CourseGoal>
-          </li>
-        ))}
-      </ul>
+
+      <CourseGoalList goals={goals} />
     </main>
   );
 }
