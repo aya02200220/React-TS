@@ -22,6 +22,9 @@ function App() {
       return [...prev, newGoal];
     });
   }
+
+  const handleDeleteGoal = () => {};
+
   return (
     <main className="flex flex-col items-center justify-center mt-10 bg-[#4e4d4d] p-5 w-[80vw] rounded-md">
       <Header image={{ src: goalImg, alt: "A list of goals" }}>
