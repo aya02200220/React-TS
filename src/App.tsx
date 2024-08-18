@@ -23,7 +23,9 @@ function App() {
     });
   }
 
-  const handleDeleteGoal = () => {};
+  const handleDeleteGoal = (id: number) => {
+    setGoals((prev) => prev.filter((goal) => goal.id !== id));
+  };
 
   return (
     <main className="flex flex-col items-center justify-center mt-10 bg-[#4e4d4d] p-5 w-[80vw] rounded-md">
@@ -39,7 +41,7 @@ function App() {
         Add Goal
       </button>
 
-      <CourseGoalList goals={goals} />
+      <CourseGoalList goals={goals} handleDelete={handleDeleteGoal} />
     </main>
   );
 }

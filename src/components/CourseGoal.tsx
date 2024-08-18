@@ -1,15 +1,25 @@
 import React, { type FC, type ReactNode, type PropsWithChildren } from "react";
 
 // TypeでもInterfaceでもOKだけどInterfaceのほうがExtendable
-// type CourseGoalProps = { title: string; description: string };
+type CourseGoalProps = {
+  title: string;
+  children: ReactNode;
+  handleDelete: (id: number) => void;
+  id: number;
+};
 // interface CourseGoalProps {
 //   title: string;
 //   children: ReactNode;
 // }
 
-type CourseGoalProps = PropsWithChildren<{ title: string }>;
+// type CourseGoalProps = PropsWithChildren<{ title: string }>;
 
-const CourseGoal: FC<CourseGoalProps> = ({ title, children }) => {
+const CourseGoal: FC<CourseGoalProps> = ({
+  title,
+  children,
+  handleDelete,
+  id,
+}) => {
   return (
     <article className="flex flex-col items-center justify-center text-center">
       <div>
@@ -21,7 +31,12 @@ const CourseGoal: FC<CourseGoalProps> = ({ title, children }) => {
         </h2>
         {children}
       </div>
-      <button className="border rounded-md px-2 py-1 mt-4">Delete</button>
+      <button
+        onClick={() => handleDelete(id)}
+        className="border rounded-md px-2 py-1 mt-4"
+      >
+        Delete
+      </button>
     </article>
   );
 };
