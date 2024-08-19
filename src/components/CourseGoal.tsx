@@ -14,12 +14,7 @@ type CourseGoalProps = {
 
 // type CourseGoalProps = PropsWithChildren<{ title: string }>;
 
-const CourseGoal: FC<CourseGoalProps> = ({
-  title,
-  children,
-  handleDelete,
-  id,
-}) => {
+const CourseGoal = ({ title, children, handleDelete, id }: CourseGoalProps) => {
   return (
     <article className="flex flex-col items-center justify-center text-center">
       <div>
