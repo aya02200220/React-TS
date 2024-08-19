@@ -14,6 +14,8 @@ const NewGoal = ({ onAddGoal }: NewGoalProps) => {
     const enteredTitle = goalTitle.current!.value;
     const enteredDescription = goalDescription.current!.value;
 
+    event.currentTarget.reset();
+
     onAddGoal(enteredTitle, enteredDescription);
   };
   return (
