@@ -17,7 +17,7 @@ const CourseGoalList = ({ goals, handleDelete }: CourseGoalProps) => {
             title={goal.title}
             handleDelete={handleDelete}
           >
-            <p className="leading-4">{goal.description}</p>
+            <p className="leading-4 grid grid-cols-3">{goal.description}</p>
           </CourseGoal>
         </li>
       ))}

@@ -1,5 +1,7 @@
 import React, { type FC, type ReactNode, type PropsWithChildren } from "react";
 
+import ButtonComponent from "./ButtonComponent";
+
 // TypeでもInterfaceでもOKだけどInterfaceのほうがExtendable
 type CourseGoalProps = {
   title: string;
@@ -32,6 +34,9 @@ const CourseGoal = ({ title, children, handleDelete, id }: CourseGoalProps) => {
       >
         Delete
       </button>
+      <ButtonComponent as={"button"} function={handleDelete(id)}>
+        Delete
+      </ButtonComponent>
     </article>
   );
 };
