@@ -4,14 +4,18 @@ import React, {
   type ReactNode,
 } from "react";
 
-type ButtonProps = {
-  as: ElementType;
+type ButtonProps<T extends ElementType> = {
+  as?: T;
   children: ReactNode;
 } & ComponentPropsWithoutRef<T>;
 
-const ButtonComponent = ({ as, children }: ButtonProps) => {
-  const Component = as;
-  return <Component>{children}</Component>;
+const ButtonComponent = <C extends ElementType>({
+  as,
+  children,
+  ...props
+}: ButtonProps<C>) => {
+  const Component = as || "div";
+  return <Component {...props}>{children}</Component>;
 };
 
 export default ButtonComponent;

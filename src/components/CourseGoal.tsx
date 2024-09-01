@@ -34,7 +34,8 @@ const CourseGoal = ({ title, children, handleDelete, id }: CourseGoalProps) => {
       >
         Delete
       </button>
-      <ButtonComponent as={"button"} function={handleDelete(id)}>
+      <ButtonComponent as={"button"} onClick={() => handleDelete(id)}>
+        {/* <ButtonComponent as={"button"} onClick={() => console.log("Clicked")}> */}
         Delete
       </ButtonComponent>
     </article>
